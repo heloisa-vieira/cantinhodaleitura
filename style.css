@@ -1,0 +1,18 @@
+.box::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 15px 50px #000);
+    border-radius: 20px;
+    animation: rotating 4s linear infinite;
+    animation-delay: -1s ;
+}
+.box::after  {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    background:#f5c0d9 ;
+    border-radius: 15 px;
+    border: 8 px solid #cdb4d6;
+}

@@ -1,0 +1,163 @@
+ /* Fundo branco suave e centralização */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF; /* fundo branco geral */
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Caixa com efeito animado roxa */
+.box {
+  position: relative;
+  width: 90%;
+  max-width: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(#B57EDC, #9D4EDD, #B57EDC); /* borda animada roxa */
+  animation: rotating 4s linear infinite;
+  z-index: 0;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: #FFFFFF; /* fundo branco dentro da caixa */
+  border-radius: 20px;
+  z-index: 1;
+}
+
+/* Conteúdo do login com borda roxa ao redor de toda a área */
+.login-container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #FF69B4; /* letras rosas */
+  padding: 40px 30px;
+  border-radius: 20px;
+  border: 3px solid #B57EDC; /* borda roxa ao redor do login */
+  background-color: #FFFFFF; /* fundo branco dentro da borda */
+}
+
+/* Títulos */
+h1 {
+  font-family: 'Playfair Display', serif;
+  color: #FF69B4; /* título rosa */
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #FF85B9; /* subtítulo rosa claro */
+  margin-bottom: 20px;
+}
+
+/* Formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Campos */
+label {
+  align-self: flex-start;
+  color: #FF1493; /* rosa vibrante */
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #FFB6C1; /* borda rosa suave nos inputs */
+  border-radius: 10px;
+  background-color: #FFE4EC; /* fundo rosa claro */
+  outline: none;
+  color: #C71585; /* texto rosa escuro */
+  font-size: 14px;
+  transition: 0.3s;
+  margin-top: 5px;
+}
+
+input::placeholder {
+  color: #FF69B4;
+}
+
+input:focus {
+  box-shadow: 0 0 8px #FFB6C1;
+}
+
+/* Botão */
+button {
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #FF69B4; /* rosa forte */
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #FF1493; /* rosa mais vibrante no hover */
+}
+
+button:focus {
+  outline: 2px solid #FF1493;
+  outline-offset: 2px;
+}
+
+/* Texto de cadastro */
+.cadastro {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #FF69B4;
+}
+
+.cadastro a {
+  color: #9D4EDD; /* link roxo */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.cadastro a:hover {
+  text-decoration: underline;
+}
+
+/* Animação da borda externa */
+@keyframes rotating {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsividade */
+@media (max-width: 400px) {
+  .login-container {
+    padding: 30px 20px;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 0.9rem;
+  }
+  input, button {
+    font-size: 0.9rem;
+  }
+}
